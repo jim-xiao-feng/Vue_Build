@@ -4,8 +4,9 @@
   "description": "vue开发脚手架",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack/dev.config.js"
+    "start": "webpack-dev-server --config webpack/dev.config.js",
+    "lint": "eslint --ext .js,.vue src",
+    "precommit": "npm run lint"
   },
   "keywords": [
     "vue"
@@ -15,9 +16,15 @@
   "devDependencies": {
     "clean-webpack-plugin": "^2.0.2",
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.3.0",
+    "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "vue-eslint-parser": "^6.0.4",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.31.0",

@@ -10,6 +10,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json', '.css', '.less'],
+    alias: {
+      'vue': 'vue/dist/vue.esm.js' // 默认vue用的runtime模式，但它不支持template
+    }
   },
   module: {
     rules: [{
@@ -21,6 +24,9 @@ module.exports = {
     }, {
       test: /\.less$/,
       loader: 'style-loader!css-loader!less-loader',
+    }, {
+      test: /\.(png|jpg|gif|svg)/,
+      loader: 'url-loader?limit=8192',
     }]
   },
   plugins: [
